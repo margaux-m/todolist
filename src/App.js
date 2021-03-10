@@ -1,5 +1,21 @@
+import { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+function WelcomeMessage() {
+  return <p>Welcome!</p>
+}
+
+const Counter = () => {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
 
 function App() {
   return (
@@ -9,6 +25,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <WelcomeMessage />
+        <Counter />
         <a
           className="App-link"
           href="https://reactjs.org"
